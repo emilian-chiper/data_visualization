@@ -2,13 +2,9 @@ import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
-input_values = [1, 2, 3, 4, 5]
-squares = [1, 4, 9, 16, 25]
-
-print(plt.style.available)
-plt.style.use('seaborn-v0_8-notebook')
+plt.style.use('Solarize_Light2')
 fig, ax = plt.subplots()
-ax.plot(input_values, squares, linewidth=3)
+ax.scatter(2, 4, s=200)
 
 # Set chart title and label axes.
 ax.set_title("Square Numbers", fontsize=24)
