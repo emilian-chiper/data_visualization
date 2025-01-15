@@ -18,11 +18,11 @@ class RandomWalk:
 
             # Decide which direction to go, and how far to go.
             x_direction = choice([1, -1])
-            x_distance = choice([0, 1, 2, 3, 4])
+            x_distance = choice([num for num in range(0, 7)])
             x_step = x_direction * x_distance
 
             y_direction = choice([1, -1])
-            y_distance = choice([0, 1, 2, 3, 4])
+            y_distance = choice([0, 1, 2, 3, 4, 12, 18, 37])
             y_step = y_direction * y_distance
 
             # Reject moves that go nowhere.
