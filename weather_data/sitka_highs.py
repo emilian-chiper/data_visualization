@@ -1,6 +1,8 @@
 from pathlib import Path
 import csv
 
+import matplotlib.pyplot as plt
+
 path = Path('./sitka_weather_07-2021_simple.csv')
 lines = path.read_text().splitlines()
 
@@ -10,5 +12,16 @@ header_row = next(reader)
 # Extract high temperatures.
 highs = [int(row[4]) for row in reader]
 
-print(highs)
+# Plot the high temperatures.
+plt.style.use('Solarize_Light2')
+fig, ax = plt.subplots()
+ax.plot(highs, color='red')
+
+# Format plot.
+ax.set_title("Daily High Temperatures, July 2021", fontsize=24)
+ax.set_xlabel('', fontsize=16)
+ax.set_ylabel("Temperature (F)", fontsize=16)
+ax.tick_params(labelsize=16)
+
+plt.show()
 
