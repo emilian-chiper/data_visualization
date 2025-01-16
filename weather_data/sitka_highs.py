@@ -7,6 +7,8 @@ lines = path.read_text().splitlines()
 reader = csv.reader(lines)
 header_row = next(reader)
 
-for index, column_header in enumerate(header_row):
-    print(index, column_header)
+# Extract high temperatures.
+highs = [int(row[4]) for row in reader]
+
+print(highs)
 
